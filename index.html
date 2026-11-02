@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FM Food Delivery</title>
+<title>FM Food Delivery – রুম সার্ভিস ও ফুড ডেলিভারি</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -218,7 +218,7 @@ footer a:hover{color:#fff}
   <div class="wrap nav">
     <a class="logo" href="#top">
       <svg viewBox="0 0 40 40" fill="none"><path d="M6 24C6 12 16 6 30 6c0 14-6 24-18 24-2 0-4-2-6-6z" fill="#1f7a4d"/><path d="M8 32C14 22 20 16 28 10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
-      <span>রূপসা<small>রেস্টুরেন্ট ও রুম সার্ভিস</small></span>
+      <span>FM Food Delivery<small>রুম সার্ভিস ও ফুড ডেলিভারি</small></span>
     </a>
     <nav class="links"><a href="#top">হোম</a><a href="#popular">জনপ্রিয়</a><a href="#menu">মেনু</a><a href="#contact">যোগাযোগ</a></nav>
     <a class="pill" id="callTop" href="#">📞 কল করুন</a>
@@ -288,8 +288,8 @@ footer a:hover{color:#fff}
     <div class="note rv"><b>বিঃদ্রঃ</b> মাছের দাম বাজার ও সাইজ অনুযায়ী নির্ধারণ করা হবে। যেসব আইটেমে “দাম জিজ্ঞেস করুন” লেখা, সেগুলোর দাম অর্ডারের সময় জানানো হবে।</div>
   </section>
 
-  <div class="hd rv" style="margin-top:60px"><span>রূপসা রেস্টুরেন্ট</span><h2>স্বাদে ভরা প্রতিটি মুহূর্ত</h2><p class="sub2">পরিবার, বন্ধু বা একা, যেভাবেই খান, রূপসার খাবারে পাবেন আপন স্বাদ।</p></div>
-  <div class="full rv" style="margin-top:0"><img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_00000000ed308208b71eaf595da4033a.png" alt="রূপসা রেস্টুরেন্ট" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <div class="hd rv" style="margin-top:60px"><span>FM Food Delivery</span><h2>স্বাদে ভরা প্রতিটি মুহূর্ত</h2><p class="sub2">পরিবার, বন্ধু বা একা, যেভাবেই খান, রূপসার খাবারে পাবেন আপন স্বাদ।</p></div>
+  <div class="full rv" style="margin-top:0"><img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_00000000ed308208b71eaf595da4033a.png" alt="FM Food Delivery" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
   <p class="cap rv">আজই মেনু থেকে বেছে নিন পছন্দের খাবার, বাকিটা আমরা সামলে নেব। 🍽️</p>
 
   <section>
@@ -305,11 +305,11 @@ footer a:hover{color:#fff}
 <footer id="contact">
   <div class="wrap">
     <div class="fg">
-      <div><h3>রূপসা</h3>রেস্টুরেন্ট ও রুম সার্ভিস।<br>খাবার আপনার রুমে, আপনার সুবিধায়।</div>
+      <div><h3>FM Food Delivery</h3>ফুড ডেলিভারি ও রুম সার্ভিস।<br>খাবার আপনার রুমে, আপনার সুবিধায়।</div>
       <div><h3>ঠিকানা</h3>২২৭-২২৮, গ্রীণ রোড,<br>কলাবাগান, ঢাকা-১২০৫</div>
       <div><h3>যোগাযোগ</h3>ফোন ও হোয়াটসঅ্যাপ: <a id="ftTel" href="#"></a><br><a href="https://www.facebook.com/rupsha.restaurant19" target="_blank" rel="noopener">facebook.com/rupsha.restaurant19</a></div>
     </div>
-    <div class="cp">© রূপসা রেস্টুরেন্ট। সর্বস্বত্ব সংরক্ষিত।</div>
+    <div class="cp">© FM Food Delivery। সর্বস্বত্ব সংরক্ষিত।</div>
   </div>
 </footer>
 
@@ -409,7 +409,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeS()});
 
 function text(){const{s,u}=totals();
   const l=Object.keys(cart).map(id=>{const i=byId(id);return `• ${i.n} × ${bn(cart[id])}${i.p==null?' (দাম পরে)':' = '+tk(i.p*cart[id])}`}).join('\n');
-  return `রূপসা – নতুন অর্ডার\nরুম: ${$('#room').value}\nনাম: ${$('#name').value||'-'}\n\n${l}\n\nখাবার: ${tk(s)}\nসার্ভিস চার্জ: ${tk(FEE)}${tip?'\nটিপস: '+tk(tip):''}\nমোট: ${tk(s+FEE+tip)}${u?' + পরে জানানো আইটেম':''}${$('#custom').value.trim()?'\n\nঅতিরিক্ত চাহিদা: '+$('#custom').value.trim():''}${$('#memo').value?'\nনোট: '+$('#memo').value:''}`}
+  return `FM Food Delivery – নতুন অর্ডার\nরুম: ${$('#room').value}\nনাম: ${$('#name').value||'-'}\n\n${l}\n\nখাবার: ${tk(s)}\nসার্ভিস চার্জ: ${tk(FEE)}${tip?'\nটিপস: '+tk(tip):''}\nমোট: ${tk(s+FEE+tip)}${u?' + পরে জানানো আইটেম':''}${$('#custom').value.trim()?'\n\nঅতিরিক্ত চাহিদা: '+$('#custom').value.trim():''}${$('#memo').value?'\nনোট: '+$('#memo').value:''}`}
 function ok(){if(!totals().c&&!$('#custom').value.trim()){toast('খাবার যোগ করুন বা কী লাগবে লিখুন');return false}if(!$('#name').value.trim()){toast('আপনার নাম লিখুন');$('#name').focus();return false}if(!$('#room').value.trim()){toast('রুম নম্বর লিখুন');$('#room').focus();return false}return true}
 const A=$('#alert');
 $('#wa').onclick=()=>{if(ok())A.classList.add('open')};
