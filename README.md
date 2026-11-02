@@ -1,1 +1,432 @@
-# Rupsha-resturent-v3-final-
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>রূপসা – রুম সার্ভিস ও রেস্টুরেন্ট</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1f7a4d;--gd:#0f4a2e;--gm:#e6f2ea;--gl:#f3f9f5;--ink:#10241a;--mu:#5f7568;--ln:#dcebe2;--w:#fff;--red:#d6452f;--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{font-family:'Hind Siliguri',system-ui,sans-serif;color:var(--ink);background:var(--w);line-height:1.6;padding-bottom:90px}
+h1,h2,h3{line-height:1.2;font-weight:700}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--ln)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.45rem;font-weight:700;color:var(--gd)}
+.logo svg{width:34px;height:34px}
+.logo small{display:block;font-size:.72rem;font-weight:500;color:var(--mu);margin-top:-6px}
+.links{display:flex;gap:26px;font-weight:500}
+.links a{position:relative;padding:4px 0}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--g);transition:width .25s}
+.links a:hover::after{width:100%}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#fff;font-weight:600;padding:11px 24px;border-radius:99px;transition:background .2s,transform .2s,box-shadow .2s}
+.pill:hover{background:var(--gd);transform:translateY(-2px);box-shadow:0 8px 18px rgba(31,122,77,.28)}
+.pill.o{background:#fff;color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g)}
+.pill.o:hover{background:var(--gm)}
+
+/* hero */
+.hero{background:linear-gradient(135deg,var(--gl),#fff 60%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;padding-top:48px;padding-bottom:56px}
+.tag{display:inline-block;color:var(--g);font-weight:600;background:var(--gm);padding:4px 14px;border-radius:99px;font-size:.92rem}
+.hero h1{font-size:clamp(2.3rem,5.6vw,3.9rem);margin:14px 0 12px;color:var(--ink)}
+.hero p.lead{color:var(--mu);font-size:1.12rem;max-width:44ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+.proof{display:flex;align-items:center;gap:12px;color:var(--mu);font-size:.95rem}
+.proof b{display:block;color:var(--ink);font-size:1.1rem}
+.dots{display:flex}.dots i{width:34px;height:34px;border-radius:50%;border:3px solid #fff;background:var(--gm);margin-left:-10px;display:grid;place-items:center;color:var(--g);font-style:normal;font-size:.9rem}
+.dots i:first-child{margin-left:0}
+.heroimg{position:relative;isolation:isolate;justify-self:center;width:min(480px,100%)}
+.heroimg .ph{aspect-ratio:1;border-radius:50%;animation:spin 20s linear infinite}
+.badge{position:absolute;background:#fff;border-radius:16px;padding:10px 16px;box-shadow:0 12px 30px rgba(15,74,46,.15);display:flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem;animation:bob 4s ease-in-out infinite}
+.badge svg{width:30px;height:30px;color:var(--g)}
+.b1{left:-8px;bottom:12%}.b2{right:-6px;top:8%;animation-delay:-2s}
+
+/* photo slots */
+.ph{background:var(--gm) repeating-linear-gradient(45deg,transparent 0 12px,rgba(31,122,77,.05) 12px 24px);display:grid;place-items:center;color:var(--g);font-weight:600;text-align:center;overflow:hidden;border:2px dashed #b5d6c2}
+.ph.has{border:0}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph span{opacity:.75;font-size:.95rem;padding:10px}
+
+/* features */
+.feat{margin-top:-6px;background:var(--gm);border-radius:var(--r);display:grid;grid-template-columns:repeat(4,1fr);padding:22px 10px}
+.fi{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:600;padding:6px 10px;text-align:center}
+.fi+.fi{border-left:1px solid #c5ddcf}
+.fi .ic{width:56px;height:56px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--g);transition:transform .3s}
+.fi:hover .ic{transform:scale(1.12) rotate(-6deg)}
+.fi svg{width:28px;height:28px}
+
+section{padding:60px 0 0}
+.hd{text-align:center;margin-bottom:28px}
+.hd span{color:var(--g);font-weight:600}
+.hd h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-top:4px}
+.hd::after{content:"";display:block;width:44px;height:3px;background:var(--g);margin:12px auto 0;border-radius:3px}
+
+/* popular */
+.pop{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:1000px){.pop{grid-template-columns:repeat(2,1fr)}}
+.card{background:#fff;border-radius:var(--r);box-shadow:0 6px 24px rgba(15,74,46,.09);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(15,74,46,.16)}
+.card .ph{aspect-ratio:4/3;border-radius:0}
+.card .ph img{transition:transform .5s}.card:hover .ph img{transform:scale(1.07)}
+.cb{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;gap:10px}
+.cb small{display:block;color:var(--mu)}
+.go{flex:none;width:38px;height:38px;border-radius:50%;background:var(--g);color:#fff;font-size:1.3rem;line-height:1;transition:transform .2s,background .2s}
+.go:hover{transform:rotate(90deg);background:var(--gd)}
+
+/* menu */
+.tools{display:flex;flex-direction:column;gap:12px;padding:6px 0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{white-space:nowrap;background:var(--gl);padding:8px 18px;border-radius:99px;font-weight:600;color:var(--gd);transition:.2s}
+.tab:hover{background:var(--gm)}
+.tab[aria-selected=true]{background:var(--g);color:#fff}
+.srch{padding:10px 18px;border-radius:99px;border:1.5px solid var(--ln);font:inherit;width:100%;max-width:420px}
+.tab small{opacity:.7;margin-left:4px}
+.srch:focus{outline:none;border-color:var(--g)}
+.mlist{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 20px;margin-top:14px}
+.mi{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--gl);border-radius:16px;padding:13px 16px;transition:background .2s,transform .2s;animation:pop .35s both}
+.mi:hover{background:var(--gm);transform:translateX(3px)}
+.mi h3{font-size:1.05rem;font-weight:600}
+.mi small{color:var(--mu)}
+.pr{font-weight:700;color:var(--g);white-space:nowrap}
+.mr{display:flex;align-items:center;gap:12px}
+.add{background:var(--g);color:#fff;border-radius:99px;padding:5px 16px;font-weight:600;font-size:.9rem;transition:.2s}
+.add:hover{background:var(--gd)}
+.qty{display:flex;align-items:center;gap:9px}
+.qty button{width:28px;height:28px;border-radius:50%;background:#fff;color:var(--g);font-weight:700;box-shadow:inset 0 0 0 1.5px var(--g)}
+.qty b{min-width:18px;text-align:center}
+.note{margin-top:20px;background:var(--gm);border-radius:16px;padding:14px 20px;color:var(--gd)}
+
+/* cta band */
+.band{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;background:var(--gl);border-radius:28px;padding:34px}
+.band h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin:6px 0 10px}
+.band p{color:var(--mu);margin-bottom:20px}
+.band .ph{aspect-ratio:4/3;border-radius:24px}
+
+footer{margin-top:60px;background:var(--gd);color:#bfdccb;padding:44px 0 28px}
+.fg{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
+footer h3{color:#fff;margin-bottom:8px;font-size:1.1rem}
+footer a:hover{color:#fff}
+.cp{border-top:1px solid rgba(255,255,255,.15);margin-top:26px;padding-top:16px;font-size:.88rem;text-align:center}
+
+/* cart */
+.bar{position:fixed;left:14px;right:14px;bottom:14px;z-index:40;max-width:580px;margin:auto;background:var(--gd);color:#fff;border-radius:99px;padding:10px 10px 10px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 14px 34px rgba(15,74,46,.4);transform:translateY(140%);transition:transform .4s cubic-bezier(.2,1.2,.4,1)}
+.bar.show{transform:none}
+.bar.bump{animation:bump .35s}
+.bar .pill{background:#fff;color:var(--gd);padding:10px 22px}
+.ov{position:fixed;inset:0;background:rgba(10,36,22,.55);z-index:50;opacity:0;pointer-events:none;transition:opacity .25s}
+.ov.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;z-index:60;left:0;right:0;bottom:0;max-width:580px;margin:auto;background:#fff;border-radius:26px 26px 0 0;max-height:92vh;overflow:auto;padding:22px 20px 26px;transform:translateY(105%);transition:transform .35s cubic-bezier(.2,.9,.3,1)}
+.sheet.open{transform:none}
+.sheet h2{font-size:1.4rem;display:flex;justify-content:space-between;align-items:center}
+.x{width:34px;height:34px;border-radius:50%;background:var(--gm);color:var(--g)}
+.ln{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed var(--ln)}
+.ln small{display:block;color:var(--mu)}
+.sum{padding:10px 0}.sum div{display:flex;justify-content:space-between}
+.sum .tot{font-weight:700;font-size:1.15rem;color:var(--g);border-top:2px solid var(--g);margin-top:6px;padding-top:6px}
+.f{display:grid;gap:10px;margin:12px 0}
+.f input,.f textarea{width:100%;padding:11px 14px;border:1.5px solid var(--ln);border-radius:14px;font:inherit}
+.f input:focus,.f textarea:focus{outline:none;border-color:var(--g)}
+.wa{width:100%;background:#1fa855;color:#fff;font-weight:700;padding:14px;border-radius:99px;font-size:1.05rem}
+.tel{width:100%;margin-top:8px;background:var(--gm);color:var(--gd);font-weight:600;padding:12px;border-radius:99px}
+.info{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.info>div{background:var(--gl);border:1.5px solid var(--ln);border-radius:var(--r);padding:18px 20px}
+.info h3{color:var(--gd);margin-bottom:4px;font-size:1.1rem}
+.info p{color:var(--mu)}.info b{color:var(--ink)}
+.tipbox{background:var(--gl);border-radius:16px;padding:12px 14px;margin:10px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;align-items:center}
+.chips button{padding:6px 16px;border-radius:99px;background:#fff;box-shadow:inset 0 0 0 1.5px var(--ln);font-weight:600;transition:.2s}
+.chips button.on{background:var(--g);color:#fff;box-shadow:none}
+.chips input{width:110px;padding:6px 12px;border:1.5px solid var(--ln);border-radius:99px;font:inherit}
+.chips input:focus{outline:none;border-color:var(--g)}
+.want{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;border:2px dashed #b5d6c2;border-radius:18px;padding:16px 20px;background:var(--gl)}
+.want span{color:var(--mu)}
+.alert{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:20px;background:rgba(40,8,4,.6);opacity:0;pointer-events:none;transition:opacity .25s}
+.alert.open{opacity:1;pointer-events:auto}
+.abox{background:#fff;border-radius:24px;max-width:380px;width:100%;overflow:hidden;text-align:center;transform:scale(.85);transition:transform .35s cubic-bezier(.2,1.3,.4,1);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.alert.open .abox{transform:none}
+.ahd{background:var(--red);color:#fff;padding:20px 16px 16px}
+.ahd i{font-style:normal;font-size:2.4rem;display:block;animation:shake .6s .3s}
+.ahd h3{font-size:1.25rem;margin-top:4px}
+.abd{padding:18px 22px 22px;color:var(--ink)}
+.abd p{margin-bottom:16px}.abd p b{color:var(--red)}
+.abd .go2{width:100%;background:var(--red);color:#fff;font-weight:700;padding:13px;border-radius:99px}
+.abd .go2:hover{background:#b8341f}
+.abd .no{width:100%;margin-top:8px;padding:10px;color:var(--mu);font-weight:600}
+.rednote{background:#fdecea;color:#b8341f;border-radius:12px;padding:8px 14px;font-weight:600;font-size:.92rem;margin:10px 0}
+@keyframes shake{20%{transform:rotate(-14deg)}40%{transform:rotate(12deg)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}}
+.spice{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center;background:linear-gradient(135deg,#0b2a1b,var(--gd));color:#fff;border-radius:30px;padding:30px;overflow:hidden}
+.spice .sp{position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.spice .sp .ph{position:absolute;left:0;right:0;top:-8%;height:116%;border:0;border-radius:0;will-change:transform;background-color:#123826}
+.spice .sp .ph span{color:#9fd4b4}
+.spice .tag{background:rgba(255,255,255,.12);color:#9fe0b8}
+.spice h2{font-size:clamp(1.7rem,3.8vw,2.6rem);margin:12px 0}
+.spice h2 em{font-style:normal;color:#f2c14e}
+.spice p.t{color:#bfdccb;max-width:48ch;margin-bottom:22px}
+.pts{display:grid;gap:12px;margin-bottom:26px}
+.pt{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 16px;transition:background .25s,transform .25s}
+.pt:hover{background:rgba(255,255,255,.13);transform:translateX(6px)}
+.pt i{flex:none;width:42px;height:42px;border-radius:12px;background:#f2c14e;color:#3a2a00;display:grid;place-items:center;font-style:normal;font-size:1.25rem}
+.pt b{display:block}.pt span{color:#bfdccb;font-size:.93rem}
+.spice .pill{background:#f2c14e;color:#2a1f00}.spice .pill:hover{background:#ffd56b}
+.full{width:100vw;margin:60px 0 0 calc(50% - 50vw);overflow:hidden;background:var(--gd)}
+.full img{display:block;width:100%;height:auto;transform:scale(1.04);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.full.on img{transform:none}
+.sub2{color:var(--mu);max-width:52ch;margin:10px auto 0}
+.cap{text-align:center;font-weight:600;color:var(--gd);font-size:1.1rem;margin-top:22px}
+.empty{text-align:center;color:var(--mu);padding:24px 0}
+.toast{position:fixed;top:78px;left:50%;transform:translate(-50%,-30px);background:var(--ink);color:#fff;padding:9px 20px;border-radius:99px;z-index:70;opacity:0;transition:.3s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* animations: load sequence + scroll reveal */
+.in{opacity:0;transform:translateY(24px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+.in:nth-child(2){animation-delay:.12s}.in:nth-child(3){animation-delay:.24s}.in:nth-child(4){animation-delay:.36s}.in:nth-child(5){animation-delay:.48s}
+.heroimg.in{animation-delay:.3s}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes bob{50%{transform:translateY(-9px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes glow{50%{transform:scale(1.08);opacity:.7}}
+@keyframes pop{from{opacity:0;transform:scale(.96)}}
+@keyframes bump{40%{transform:scale(1.06)}}
+
+@media(max-width:820px){
+  .spice{grid-template-columns:1fr;padding:20px}.spice .sp{aspect-ratio:4/3}
+  .info{grid-template-columns:1fr}
+  .links{display:none}
+  .hero .wrap,.band{grid-template-columns:1fr}
+  .heroimg{order:-1;width:min(320px,86%)}
+  .feat{grid-template-columns:repeat(2,1fr);gap:14px 0}.fi:nth-child(3){border-left:0}
+  .pop,.mlist,.fg{grid-template-columns:1fr}
+  .band{padding:22px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.in,.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M6 24C6 12 16 6 30 6c0 14-6 24-18 24-2 0-4-2-6-6z" fill="#1f7a4d"/><path d="M8 32C14 22 20 16 28 10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>রূপসা<small>রেস্টুরেন্ট ও রুম সার্ভিস</small></span>
+    </a>
+    <nav class="links"><a href="#top">হোম</a><a href="#popular">জনপ্রিয়</a><a href="#menu">মেনু</a><a href="#contact">যোগাযোগ</a></nav>
+    <a class="pill" id="callTop" href="#">📞 কল করুন</a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="tag in">হোটেল গেস্টদের জন্য রুম সার্ভিস</span>
+      <h1 class="in">রুমে বসেই খান<br>সুস্বাদু খাবার</h1>
+      <p class="lead in">সিঁড়ি বেয়ে নামার ঝামেলা নেই। মেনু থেকে বেছে নিন, খাবার পৌঁছে যাবে আপনার রুমের দরজায়।</p>
+      <div class="cta in">
+        <a class="pill" href="#menu">মেনু দেখুন →</a>
+        <a class="pill o" href="#contact">যোগাযোগ</a>
+      </div>
+      <div class="proof in"><div class="dots"><i>🍛</i><i>🍗</i><i>🐟</i></div><div><b>৮০+ আইটেম</b>নাস্তা, ভাত, বিরিয়ানি, কাবাব ও আরও</div></div>
+    </div>
+    <div class="heroimg in">
+      <div class="ph" data-img="hero"></div>
+      <div class="badge b1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18a7 7 0 0114 0M12 8V6m-2 0h4"/></svg>রুমে ডেলিভারি</div>
+      <div class="badge b2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-6-8-10a4 4 0 018-1 4 4 0 018 1c0 4-3 7-8 10z"/></svg>তাজা ও গরম</div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="feat rv">
+    <div class="fi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20c0-9 5-15 14-15 0 9-5 15-14 15zM5 20c2-5 5-8 9-10"/></svg></div>তাজা উপকরণ</div>
+    <div class="fi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14a4 4 0 112-7.6A4 4 0 0117 6a4 4 0 012 8v5H7z"/><path d="M7 17h12"/></svg></div>অভিজ্ঞ বাবুর্চি</div>
+    <div class="fi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18M5 18a7 7 0 0114 0M12 8V6m-2 0h4"/></svg></div>রুমে ডেলিভারি</div>
+    <div class="fi"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 3h6"/></svg></div>দ্রুত সার্ভিস</div>
+  </div>
+
+  <div class="info rv">
+    <div><h3>🏨 হোটেল গেস্টদের জন্য</h3><p>মেনু থেকে খাবার বেছে <b>রুম নম্বর ও নাম</b> দিয়ে অর্ডার পাঠান। খাবার আপনার রুমের দরজায় পৌঁছে যাবে। রুম সার্ভিস চার্জ <b>মাত্র ৫০ টাকা</b> (প্রতি অর্ডারে)।</p></div>
+    <div><h3>🎁 রুমে বিনামূল্যে পাবেন</h3><p>সাবান, শ্যাম্পু, ব্রাশ, পেস্ট, টয়লেট টিস্যু ও <b>১ লিটার পানি</b>। আর কিছু লাগলে জানান।</p></div>
+  </div>
+
+  <section id="popular">
+    <div class="hd rv"><span>আমাদের</span><h2>জনপ্রিয় খাবার</h2></div>
+    <div class="pop" id="pop"></div>
+  </section>
+
+  <section>
+    <div class="spice rv">
+      <div class="sp"><div class="ph" data-img="spice"></div></div>
+      <div>
+        <span class="tag">স্বাদের পেছনের গল্প</span>
+        <h2>মশলার ঘ্রাণেই <em>আসল স্বাদ</em></h2>
+        <p class="t">প্রতিটি পদে ঠিক মাপের মশলা আর যত্নের রান্না। ভাত, বিরিয়ানি বা কাবাব, আপনার রুমে পৌঁছাবে গরম আর ঘ্রাণে ভরপুর।</p>
+        <div class="pts">
+          <div class="pt"><i>🌶️</i><div><b>ঝাল-মসলার সঠিক মিশ্রণ</b><span>প্রতিটি রান্নায় স্বাদের ভারসাম্য।</span></div></div>
+          <div class="pt"><i>🍲</i><div><b>গরম গরম পরিবেশন</b><span>রান্না শেষে সরাসরি আপনার রুমে।</span></div></div>
+          <div class="pt"><i>🍽️</i><div><b>ছোট থেকে বড় সব পদ</b><span>নাস্তা থেকে রাতের খাবার, সবই এক মেনুতে।</span></div></div>
+        </div>
+        <a class="pill" href="#menu">মেনু দেখুন →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="hd rv"><span>পুরো তালিকা</span><h2>আমাদের মেনু</h2></div>
+    <div class="tools"><div class="tabs" id="tabs" role="tablist"></div><input class="srch" id="srch" type="search" placeholder="🔍 খাবার খুঁজুন"></div>
+    <div class="mlist" id="mlist"></div>
+    <div class="want rv"><div><b>মেনুতে নেই, অন্য কিছু লাগবে?</b><br><span>নিজের মতো লিখে জানান, আমরা চেষ্টা করব এনে দিতে।</span></div><button class="pill o" id="wantBtn">✍️ লিখে জানান</button></div>
+    <div class="note rv"><b>বিঃদ্রঃ</b> মাছের দাম বাজার ও সাইজ অনুযায়ী নির্ধারণ করা হবে। যেসব আইটেমে “দাম জিজ্ঞেস করুন” লেখা, সেগুলোর দাম অর্ডারের সময় জানানো হবে।</div>
+  </section>
+
+  <div class="hd rv" style="margin-top:60px"><span>রূপসা রেস্টুরেন্ট</span><h2>স্বাদে ভরা প্রতিটি মুহূর্ত</h2><p class="sub2">পরিবার, বন্ধু বা একা, যেভাবেই খান, রূপসার খাবারে পাবেন আপন স্বাদ।</p></div>
+  <div class="full rv" style="margin-top:0"><img src="https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_00000000ed308208b71eaf595da4033a.png" alt="রূপসা রেস্টুরেন্ট" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+  <p class="cap rv">আজই মেনু থেকে বেছে নিন পছন্দের খাবার, বাকিটা আমরা সামলে নেব। 🍽️</p>
+
+  <section>
+    <div class="band rv">
+      <div><span class="tag">সহজ অর্ডার</span><h2>রুম নম্বর দিন,<br>বাকিটা আমাদের</h2>
+        <p>খাবার বেছে হোয়াটসঅ্যাপে পাঠান বা সরাসরি ফোন করুন। রুম নম্বর দিলেই খাবার আপনার দরজায় পৌঁছে যাবে।</p>
+        <a class="pill" href="#menu">অর্ডার শুরু করুন →</a></div>
+      <div class="ph" data-img="band"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fg">
+      <div><h3>রূপসা</h3>রেস্টুরেন্ট ও রুম সার্ভিস।<br>খাবার আপনার রুমে, আপনার সুবিধায়।</div>
+      <div><h3>ঠিকানা</h3>২২৭-২২৮, গ্রীণ রোড,<br>কলাবাগান, ঢাকা-১২০৫</div>
+      <div><h3>যোগাযোগ</h3>ফোন ও হোয়াটসঅ্যাপ: <a id="ftTel" href="#"></a><br><a href="https://www.facebook.com/rupsha.restaurant19" target="_blank" rel="noopener">facebook.com/rupsha.restaurant19</a></div>
+    </div>
+    <div class="cp">© রূপসা রেস্টুরেন্ট। সর্বস্বত্ব সংরক্ষিত।</div>
+  </div>
+</footer>
+
+<div class="bar" id="bar"><div><b id="bc">০ আইটেম</b> · <span id="bt"></span></div><button class="pill" id="open">কার্ট দেখুন</button></div>
+<div class="ov" id="ov"></div>
+<div class="sheet" id="sheet" role="dialog" aria-label="আপনার অর্ডার">
+  <h2>আপনার অর্ডার <button class="x" id="close" aria-label="বন্ধ করুন">✕</button></h2>
+  <div id="lines"></div><div class="sum" id="sum"></div>
+  <div class="tipbox"><b>টিপস দিতে চান? <small>(ঐচ্ছিক)</small></b><div class="chips" id="chips"></div></div>
+  <div class="f"><textarea id="custom" rows="2" placeholder="✍️ মেনুতে নেই এমন কিছু লাগলে এখানে লিখুন (ঐচ্ছিক)"></textarea><input id="name" placeholder="আপনার নাম *"><input id="room" inputmode="numeric" placeholder="রুম নম্বর *"><textarea id="memo" rows="2" placeholder="বিশেষ কথা (যেমন: ঝাল কম)"></textarea></div>
+  <div class="rednote">⚠️ অর্ডার করতে আপনার ফোনে হোয়াটসঅ্যাপ থাকতে হবে</div>
+  <button class="wa" id="wa">হোয়াটসঅ্যাপে অর্ডার পাঠান</button>
+  <button class="tel" id="tel">ফোনে অর্ডার দিন</button>
+</div>
+<div class="alert" id="alert" role="alertdialog" aria-labelledby="at"><div class="abox">
+  <div class="ahd"><i>⚠️</i><h3 id="at">জরুরি কথা</h3></div>
+  <div class="abd"><p>অর্ডার করতে আপনার ফোনে <b>হোয়াটসঅ্যাপ অবশ্যই থাকতে হবে।</b> হোয়াটসঅ্যাপ না থাকলে অর্ডার আমাদের কাছে পৌঁছাবে না। না থাকলে সরাসরি ফোন করে অর্ডার দিন।</p>
+  <button class="go2" id="aok">ঠিক আছে, হোয়াটসঅ্যাপ খুলুন</button>
+  <button class="no" id="acall">হোয়াটসঅ্যাপ নেই, ফোন করব</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== আপনার তথ্য ===== */
+const PHONE="8801616700055";   // কল করার হটলাইন (৮৮০ দিয়ে, + ছাড়া)
+const WA="8801616700055";      // অর্ডার যে হোয়াটসঅ্যাপ নম্বরে আসবে (৮৮০ দিয়ে, + ছাড়া)
+const FEE=50;                  // রুম সার্ভিস চার্জ (টাকা)
+/* ছবি বসাতে লিংক দিন। খালি থাকলে ছবির জায়গা ফাঁকা দেখাবে */
+const IMAGES={spice:"https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_00000000ff1882118aad71619e7fc9f0.png",hero:"https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_0000000054788208a30cd7338950158d.png",band:"https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_000000003e808208acc311002b03e267.png",p0:"https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_000000006f0c8208a3cf04755e1717ea.png",p1:"https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_00000000706082119d93a5413aa4b87d.png",p2:"https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_000000007f088208a2e1073c0af283a2.png",p3:"https://raw.githubusercontent.com/jamil478/My-sobi-/refs/heads/main/file_0000000057a88208b7d53717076dc43d.png"};
+/* মেনু: "নাম|দাম" (দাম না থাকলে শুধু নাম) */
+const MENU={
+"সকালের নাস্তা":["রুটি|15","পরটা|15","ডাল|20","ভাজি|20","ডাল-ভাজি|20","মুগ ডাল|30","হালুয়া|30","চিকেন স্যুপ|100","খাসির পায়া|180","গরু নেহারি|150","খাসির কলিজা|140","ডিম ভাজা|25","রং চা|15","দুধ চা|30"],
+"বিরিয়ানী ও কারী":["ডিম খিচুড়ী|90","বিফ খিচুড়ী|250","চিকেন খিচুড়ী|160","তেহারি|160","চিকেন বিরিয়ানী|180","কাচ্চি বিরিয়ানী|200","গরুর কালা ভুনা|260","গরুর লাল ভুনা|260","চিকেন ঝাল ফ্রাই|140","চিকেন রোস্ট|140","খাসির মাংস ভুনা|250","হাঁসের মাংস ভুনা|300","পোলাও / খিচুড়ী রাইস|70"],
+"ভাত, ভর্তা ও সবজি":["সাদা ভাত|20","ভর্তা / ভাজি|30","শুটকি ভর্তা|50","পাতলা ডাল (সিঙ্গেল)|20","পাতলা ডাল (ডাবল)|30","সবজি|30"],
+"মাছ":["কাচকি মাছ|120","রুই মাছ","রূপচাঁদা মাছ","তেলাপিয়া মাছ","বাইম মাছ","টেংরা মাছ","ইলিশ মাছ","পোয়া মাছ"],
+"কাবাব ও গ্রিল":["বিফ শিক কাবাব|170","চিকেন বডি কাবাব|140","চিকেন তান্দুরি|150","চিকেন রেশমি|150","চিকেন চাপ|140","চিকেন শর্মা|120","গ্রিল কোয়ার্টার|120","গ্রিল হাফ|280","গ্রিল ফুল|480"],
+"রুটি ও নান":["তান্দুরি রুটি|20","নরমাল নান|30","বাটার নান|40","শাহী পরোটা|30"],
+"পানীয়":["মিনারেল ওয়াটার","কোক / স্প্রাইট / ফান্টা","পেপসি / সেভেনআপ / মিরিন্ডা / ডিউ","ডায়েট ক্যান"],
+"মিষ্টি ও দই":["রূপসা স্পেশাল ফিরনি","লাবাং","বোরহানি","রূপসা স্পেশাল দই (কাপ)","ডাবের পুডিং","ডিমের পুডিং"]
+};
+const POP=[["কাচ্চি বিরিয়ানী","সবচেয়ে বেশি অর্ডার হয়"],["তেহারি","গরম গরম পরিবেশন"],["চিকেন তান্দুরি","গ্রিলে ভাজা"],["গ্রিল হাফ","আগুনে গ্রিল করা"]];
+/* ======================= */
+
+const $=s=>document.querySelector(s), bn=n=>Number(n).toLocaleString('bn-BD'), tk=n=>'৳'+bn(n);
+const ITEMS=[];let cat=Object.keys(MENU)[0],cart={},tip=0;
+for(const c in MENU)MENU[c].forEach((s,i)=>{const [n,p]=s.split('|');ITEMS.push({id:c+i,c,n,p:p?+p:null})});
+const byId=id=>ITEMS.find(i=>i.id===id), byName=n=>ITEMS.find(i=>i.n===n);
+try{const s=JSON.parse(localStorage.getItem('rupsha2')||'{}');if(s&&typeof s==='object')cart=s}catch(e){}
+const store=()=>{try{localStorage.setItem('rupsha2',JSON.stringify(cart))}catch(e){}};
+const price=i=>i.p==null?'দাম জিজ্ঞেস করুন':tk(i.p);
+
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),1700)}
+
+function slots(){document.querySelectorAll('.ph').forEach(el=>{const u=IMAGES[el.dataset.img];
+  if(u){el.classList.add('has');el.innerHTML=`<img src="${u}" alt="" loading="lazy">`;el.firstChild.onerror=()=>{el.classList.remove('has');el.innerHTML='<span>📷 ছবি এখানে বসবে</span>'}}else el.innerHTML='<span>📷 ছবি এখানে বসবে</span>'})}
+
+function popular(){
+  $('#pop').innerHTML=POP.map((p,i)=>{const it=byName(p[0]);if(!it)return'';
+    return `<article class="card rv"><div class="ph" data-img="p${i}"></div><div class="cb"><div><h3>${it.n}</h3><small>${p[1]} · ${price(it)}</small></div><button class="go" data-a="${it.id}" aria-label="${it.n} কার্টে যোগ করুন">+</button></div></article>`}).join('');
+}
+function tabs(){$('#tabs').innerHTML=Object.keys(MENU).map(c=>`<button class="tab" role="tab" aria-selected="${c===cat}" data-c="${c}">${c}<small>${bn(MENU[c].length)}</small></button>`).join('')}
+function list(){
+  const q=$('#srch').value.trim();
+  const arr=q?ITEMS.filter(i=>i.n.includes(q)):ITEMS.filter(i=>i.c===cat);
+  $('#mlist').innerHTML=arr.length?arr.map((i,k)=>{const n=cart[i.id]||0;
+    return `<div class="mi" style="animation-delay:${k*30}ms"><div><h3>${i.n}</h3>${q?`<small>${i.c}</small>`:''}</div>
+    <div class="mr"><span class="pr">${i.p==null?'<small>দাম জিজ্ঞেস করুন</small>':tk(i.p)}</span>
+    ${n?`<div class="qty"><button data-m="${i.id}" aria-label="কমান">−</button><b>${bn(n)}</b><button data-a="${i.id}" aria-label="বাড়ান">+</button></div>`:`<button class="add" data-a="${i.id}">যোগ করুন</button>`}</div></div>`}).join(''):'<p class="empty">কিছু পাওয়া যায়নি</p>';
+}
+function totals(){let c=0,s=0,u=0;for(const id in cart){const i=byId(id);if(!i)continue;c+=cart[id];if(i.p==null)u+=cart[id];else s+=cart[id]*i.p}return{c,s,u}}
+function chips(){const o=[0,10,20,50,100];
+  $('#chips').innerHTML=o.map(v=>`<button data-t="${v}" class="${tip===v?'on':''}">${v?tk(v):'না'}</button>`).join('')+`<input id="tipc" type="number" min="0" inputmode="numeric" placeholder="অন্য পরিমাণ" value="${o.includes(tip)?'':tip}">`;
+  $('#tipc').oninput=e=>{tip=Math.max(0,parseInt(e.target.value)||0);chips2();cartView()}}
+function chips2(){document.querySelectorAll('#chips button').forEach(b=>b.classList.toggle('on',+b.dataset.t===tip))}
+function cartView(){
+  const{c,s,u}=totals();
+  if(!c){$('#lines').innerHTML='<p class="empty">কার্ট খালি। মেনু থেকে খাবার যোগ করুন, অথবা নিচে লিখে জানান।</p>';$('#sum').innerHTML='';return}
+  $('#lines').innerHTML=Object.keys(cart).map(id=>{const i=byId(id);return `<div class="ln"><div>${i.n}<small>${i.p==null?'দাম জিজ্ঞেস করুন':tk(i.p)+' × '+bn(cart[id])+' = '+tk(i.p*cart[id])}</small></div><div class="qty"><button data-m="${id}" aria-label="কমান">−</button><b>${bn(cart[id])}</b><button data-a="${id}" aria-label="বাড়ান">+</button></div></div>`}).join('');
+  $('#sum').innerHTML=`<div><span>খাবারের দাম</span><span>${tk(s)}</span></div><div><span>রুম সার্ভিস চার্জ</span><span>${tk(FEE)}</span></div>${u?`<div><small>+ ${bn(u)}টি আইটেমের দাম পরে জানানো হবে</small></div>`:''}${tip?`<div><span>টিপস</span><span>${tk(tip)}</span></div>`:''}<div class="tot"><span>মোট</span><span>${tk(s+FEE+tip)}${u?'+':''}</span></div>`;
+}
+function render(){
+  const{c,s,u}=totals();
+  $('#bar').classList.toggle('show',c>0);$('#bc').textContent=bn(c)+' আইটেম';$('#bt').textContent=tk(s+FEE)+(u?'+':'');
+  list();cartView();store();
+}
+function change(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];render();
+  if(d>0){const b=$('#bar');b.classList.remove('bump');void b.offsetWidth;b.classList.add('bump')}}
+
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.a){change(b.dataset.a,1);if(b.classList.contains('go'))toast(byId(b.dataset.a).n+' যোগ হয়েছে')}
+  else if(b.dataset.m)change(b.dataset.m,-1);
+  else if(b.dataset.t!==undefined){tip=+b.dataset.t;const c=$('#tipc');if(c)c.value='';chips2();cartView()}
+  else if(b.classList.contains('tab')){cat=b.dataset.c;$('#srch').value='';tabs();list()}});
+$('#srch').oninput=list;
+const openS=()=>{$('#ov').classList.add('open');$('#sheet').classList.add('open')},closeS=()=>{$('#ov').classList.remove('open');$('#sheet').classList.remove('open')};
+$('#open').onclick=openS;$('#wantBtn').onclick=()=>{openS();setTimeout(()=>$('#custom').focus(),350)};$('#close').onclick=closeS;$('#ov').onclick=closeS;
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeS()});
+
+function text(){const{s,u}=totals();
+  const l=Object.keys(cart).map(id=>{const i=byId(id);return `• ${i.n} × ${bn(cart[id])}${i.p==null?' (দাম পরে)':' = '+tk(i.p*cart[id])}`}).join('\n');
+  return `রূপসা – নতুন অর্ডার\nরুম: ${$('#room').value}\nনাম: ${$('#name').value||'-'}\n\n${l}\n\nখাবার: ${tk(s)}\nসার্ভিস চার্জ: ${tk(FEE)}${tip?'\nটিপস: '+tk(tip):''}\nমোট: ${tk(s+FEE+tip)}${u?' + পরে জানানো আইটেম':''}${$('#custom').value.trim()?'\n\nঅতিরিক্ত চাহিদা: '+$('#custom').value.trim():''}${$('#memo').value?'\nনোট: '+$('#memo').value:''}`}
+function ok(){if(!totals().c&&!$('#custom').value.trim()){toast('খাবার যোগ করুন বা কী লাগবে লিখুন');return false}if(!$('#name').value.trim()){toast('আপনার নাম লিখুন');$('#name').focus();return false}if(!$('#room').value.trim()){toast('রুম নম্বর লিখুন');$('#room').focus();return false}return true}
+const A=$('#alert');
+$('#wa').onclick=()=>{if(ok())A.classList.add('open')};
+$('#aok').onclick=()=>{A.classList.remove('open');toast('হোয়াটসঅ্যাপ খুলছে... শুধু Send চাপুন');location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(text())};
+$('#acall').onclick=()=>{A.classList.remove('open');location.href='tel:+'+PHONE};
+A.onclick=e=>{if(e.target===A)A.classList.remove('open')};
+$('#tel').onclick=()=>{if(ok())location.href='tel:+'+PHONE};
+$('#callTop').href=$('#ftTel').href='tel:+'+PHONE;$('#ftTel').textContent='+'+PHONE.replace(/^(\d{3})(\d{4})(\d+)/,'$1 $2 $3');
+
+/* scroll reveal */
+function reveal(){const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.15});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(el.classList.contains('card')?(i%4)*90:0)+'ms';io.observe(el)})}
+
+function parallax(){const el=document.querySelector('.spice .ph');if(!el||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const f=()=>{const r=el.parentNode.getBoundingClientRect(),h=innerHeight;if(r.bottom<0||r.top>h)return;const k=(r.top+r.height/2-h/2)/h;el.style.transform=`translateY(${k*-7}%) scale(1.04)`};
+  addEventListener('scroll',f,{passive:true});addEventListener('resize',f);f()}
+popular();tabs();chips();render();parallax();slots();reveal();
+</script>
+</body>
+</html>
